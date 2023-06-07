@@ -14,16 +14,16 @@ pytorch_model: implementation of the FS model using Pytorch and analysis of the 
 TS_models: the TST and Inception Time models including the experiment of trying to generalization.
 
 ## Requirements
-Python >=3.6
-TensorFlow = 1.14.0
-TensorBoard = 1.14.0
-Scikit-Learn = 0.22.2
-NumPy = 1.18.4
-Tqdm = 4.36.1
-Pandas = 0.25.1
-Mlxtend = 0.17.
-tsai = 0.3.6
-torch = 2.0.0
+Python >=3.6 <br />
+TensorFlow = 1.14.0 <br />
+TensorBoard = 1.14.0 <br />
+Scikit-Learn = 0.22.2 <br />
+NumPy = 1.18.4 <br />
+Tqdm = 4.36.1 <br />
+Pandas = 0.25.1 <br />
+Mlxtend = 0.17. <br />
+tsai = 0.3.6 <br />
+torch = 2.0.0 <br />
 
 
 ## Sources:
