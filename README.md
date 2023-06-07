@@ -1,20 +1,20 @@
-Final Project B - Electrical and Computer Engineering Technion
-Emotion Recognition from ECG
-Eitan Cohen
-Supervised by Amro Abu-Saleh
+# Final Project B - Electrical and Computer Engineering Technion
+## Emotion Recognition from ECG
+### Eitan Cohen
+### Supervised by Amro Abu-Saleh
 
-Project Goals:
-•	Research the option of emotion recognition from ECG
-•	Follow after an existing model and offer a way to improve performances.
+## Project Goals:
+    Research the option of emotion recognition from ECG
+    Follow after an existing model and offer a way to improve performances.
 
-Repository Content
+## Repository Content:
 Extract_samples: MATLAB script for converting the ECG samples from S00 to csv files.
 pre_processing_and_recover_network:  reconstruction of the  SSL model from the paper including the pre-processing of the dataset. In Keras.
 pytorch_model: implementation of the FS model using Pytorch and analysis of the result  for the research part of the project.
 TS_models: the TST and Inception Time models including the experiment of trying to generalization.
 
 
-Sources:
+## Sources:
 •	Pritam Sarkar, Ali Etemad , “Self-supervised ECG Representation Learning for Emotion Recognition”, IEEE Transactions on Affective Computing, 2020.
 •	Hasnul, Muhammad Anas, Nor Azlina Ab. Aziz, Salem Alelyani, Mohamed Mohana, and Azlan Abd. Aziz. "Electrocardiogram-Based Emotion Recognition Systems and Their Applications in Healthcare—A Review" Sensors 21, no. 15: 5015. https://doi.org/10.3390/s21155015, 2021.
 •	Saskia Koldijk, Maya Sappelli, Suzan Verberne, Mark A. Neerincx, and Wessel Kraaij. 2014. The SWELL Knowledge Work Dataset for Stress and User Modeling Research. In Proceedings of the 16th International Conference on Multimodal Interaction (ICMI '14). Association for Computing Machinery, New York, NY, USA, 291–298. 
