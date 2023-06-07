@@ -25,6 +25,7 @@ Mlxtend = 0.17.
 tsai = 0.3.6
 torch = 2.0.0
 
+
 ## Sources:
 •	Pritam Sarkar, Ali Etemad , “Self-supervised ECG Representation Learning for Emotion Recognition”, IEEE Transactions on Affective Computing, 2020.
 •	Hasnul, Muhammad Anas, Nor Azlina Ab. Aziz, Salem Alelyani, Mohamed Mohana, and Azlan Abd. Aziz. "Electrocardiogram-Based Emotion Recognition Systems and Their Applications in Healthcare—A Review" Sensors 21, no. 15: 5015. https://doi.org/10.3390/s21155015, 2021.
