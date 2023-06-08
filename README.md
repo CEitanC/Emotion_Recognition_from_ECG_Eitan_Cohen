@@ -13,18 +13,6 @@ pre_processing_and_recover_network:  reconstruction of the  SSL model from the p
 pytorch_model: implementation of the FS model using Pytorch and analysis of the result  for the research part of the project.
 TS_models: the TST and Inception Time models including the experiment of trying to generalization.
 
-## Requirements
-Python >=3.6 <br />
-TensorFlow = 1.14.0 <br />
-TensorBoard = 1.14.0 <br />
-Scikit-Learn = 0.22.2 <br />
-NumPy = 1.18.4 <br />
-Tqdm = 4.36.1 <br />
-Pandas = 0.25.1 <br />
-Mlxtend = 0.17. <br />
-tsai = 0.3.6 <br />
-torch = 2.0.0 <br />
-
 
 ## Sources:
 •	Pritam Sarkar, Ali Etemad , “Self-supervised ECG Representation Learning for Emotion Recognition”, IEEE Transactions on Affective Computing, 2020.
