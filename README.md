@@ -13,15 +13,7 @@ pre_processing_and_recover_network:  reconstruction of the  SSL model from the p
 pytorch_model: implementation of the FS model using Pytorch and analysis of the result  for the research part of the project.
 TS_models: the TST and Inception Time models including the experiment of trying to generalization.
 
-
-## Sources:
-•	Pritam Sarkar, Ali Etemad , “Self-supervised ECG Representation Learning for Emotion Recognition”, IEEE Transactions on Affective Computing, 2020.
-•	Hasnul, Muhammad Anas, Nor Azlina Ab. Aziz, Salem Alelyani, Mohamed Mohana, and Azlan Abd. Aziz. "Electrocardiogram-Based Emotion Recognition Systems and Their Applications in Healthcare—A Review" Sensors 21, no. 15: 5015. https://doi.org/10.3390/s21155015, 2021.
-•	Saskia Koldijk, Maya Sappelli, Suzan Verberne, Mark A. Neerincx, and Wessel Kraaij. 2014. The SWELL Knowledge Work Dataset for Stress and User Modeling Research. In Proceedings of the 16th International Conference on Multimodal Interaction (ICMI '14). Association for Computing Machinery, New York, NY, USA, 291–298. 
-•	Ismail Fawaz, Hassan, Benjamin Lucas, Germain Forestier, Charlotte Pelletier, Daniel F. Schmidt, Jonathan Weber, Geoffrey I. Webb, Lhassane Idoumghar, Pierre-Alain Muller, and François Petitjean. "Inceptiontime: Finding alexnet for time series classification." Data Mining and Knowledge Discovery 34, no. 6 (2020): 1936-1962.
-•	Zerveas, George, Srideepika Jayaraman, Dhaval Patel, Anuradha Bhamidipaty, and Carsten Eickhoff. "A transformer-based framework for multivariate time series representation learning." In Proceedings of the 27th ACM SIGKDD Conference on Knowledge Discovery & Data Mining, pp. 2114-2124. 2021.
-
-This project is based on another great paper and use the code of the authors
+## Credits
 @misc{sarkar2020selfsupervised,
     title={Self-supervised ECG Representation Learning for Emotion Recognition},
     author={Pritam Sarkar and Ali Etemad},
@@ -50,3 +42,10 @@ This project is based on another great paper and use the code of the authors
   pages={3217-3221},}
   
   https://github.com/pritamqu/SSL-ECG/blob/master/LICENSE
+
+## Sources:
+•	Pritam Sarkar, Ali Etemad , “Self-supervised ECG Representation Learning for Emotion Recognition”, IEEE Transactions on Affective Computing, 2020.
+•	Hasnul, Muhammad Anas, Nor Azlina Ab. Aziz, Salem Alelyani, Mohamed Mohana, and Azlan Abd. Aziz. "Electrocardiogram-Based Emotion Recognition Systems and Their Applications in Healthcare—A Review" Sensors 21, no. 15: 5015. https://doi.org/10.3390/s21155015, 2021.
+•	Saskia Koldijk, Maya Sappelli, Suzan Verberne, Mark A. Neerincx, and Wessel Kraaij. 2014. The SWELL Knowledge Work Dataset for Stress and User Modeling Research. In Proceedings of the 16th International Conference on Multimodal Interaction (ICMI '14). Association for Computing Machinery, New York, NY, USA, 291–298. 
+•	Ismail Fawaz, Hassan, Benjamin Lucas, Germain Forestier, Charlotte Pelletier, Daniel F. Schmidt, Jonathan Weber, Geoffrey I. Webb, Lhassane Idoumghar, Pierre-Alain Muller, and François Petitjean. "Inceptiontime: Finding alexnet for time series classification." Data Mining and Knowledge Discovery 34, no. 6 (2020): 1936-1962.
+•	Zerveas, George, Srideepika Jayaraman, Dhaval Patel, Anuradha Bhamidipaty, and Carsten Eickhoff. "A transformer-based framework for multivariate time series representation learning." In Proceedings of the 27th ACM SIGKDD Conference on Knowledge Discovery & Data Mining, pp. 2114-2124. 2021.
