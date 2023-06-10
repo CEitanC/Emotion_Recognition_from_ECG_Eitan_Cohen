@@ -16,7 +16,7 @@ TS_models: the TST and Inception Time models including the experiment of trying 
 The instructions for running the project can be found in the main directory of the project, in the file named "Instructions_for_Running.md."
 
 ## Credits
-The projed is based on the paper - https://arxiv.org/abs/2002.03898
+The projed is based on the paper - https://arxiv.org/abs/2002.03898 </br>
 @misc{sarkar2020selfsupervised,
     title={Self-supervised ECG Representation Learning for Emotion Recognition},
     author={Pritam Sarkar and Ali Etemad},
@@ -25,7 +25,7 @@ The projed is based on the paper - https://arxiv.org/abs/2002.03898
     archivePrefix={arXiv},
     primaryClass={eess.SP}
 }
-
+</br>
 @misc{sarkar2020selfsupervised,
     title={Self-supervised ECG Representation Learning for Emotion Recognition},
     author={Pritam Sarkar and Ali Etemad},
@@ -34,6 +34,7 @@ The projed is based on the paper - https://arxiv.org/abs/2002.03898
     archivePrefix={arXiv},
     primaryClass={eess.SP}
 }
+</br>
 
 @INPROCEEDINGS{sarkar2019selfsupervised,
   author={P. {Sarkar} and A. {Etemad}},
@@ -43,7 +44,7 @@ The projed is based on the paper - https://arxiv.org/abs/2002.03898
   volume={},
   number={},
   pages={3217-3221},}
-  
+  </br>
   https://github.com/pritamqu/SSL-ECG/blob/master/LICENSE
 
 ## Sources:
