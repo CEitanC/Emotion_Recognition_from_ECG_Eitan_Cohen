@@ -13,7 +13,10 @@ pre_processing_and_recover_network:  reconstruction of the  SSL model from the p
 pytorch_model: implementation of the FS model using Pytorch and analysis of the result  for the research part of the project.
 TS_models: the TST and Inception Time models including the experiment of trying to generalization.
 
+The instructions for running the project can be found in the main directory of the project, in the file named "Instructions_for_Running.md."
+
 ## Credits
+The projed is based on the paper - https://arxiv.org/abs/2002.03898
 @misc{sarkar2020selfsupervised,
     title={Self-supervised ECG Representation Learning for Emotion Recognition},
     author={Pritam Sarkar and Ali Etemad},
