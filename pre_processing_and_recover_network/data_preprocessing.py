@@ -57,14 +57,10 @@ def import_filenames(directory_path):
     """ 
     import all file names of a directory """
 
-    print("dir path in import_filenames is ",directory_path) #for debug
+    print("dir path in import_filenames is ",directory_path)
 
     filename_list = []
     dir_list      = []
-    #our version cause the original added undefined file ~lock...
-    #for (directory_path, dir_names, file_name) in os.walk(directory_path):
-    #    filename_list.extend(file_name);
-    #                 the original os:
     for root, dirs, files in os.walk(directory_path, topdown=False):
         filename_list   = files     
         dir_list        = dirs
@@ -110,45 +106,31 @@ def make_window(signal, fs, overlap, window_size_sec):
         
         
 def extract_swell_dataset(overlap_pct, window_size_sec, data_save_path, save):
-
-    print("SWELL 2")
-    
-    #original code
-    # TODO: change slash for linux format (not windows)
-    #swell_path = "set_your_path\\final_SWELL\\filtered_ecg\\"
-    #swell_labels_path = "set_your_path\\final_SWELL\\label\\behavioral-labels.xlsx"
-
-    #for testing only pp9
-    swell_path = "./swell/PP9/sample/"
-    swell_labels_path = "./swell/PP9/label.xlsx"
-
+    swell_path = "./csv_files/"
+    swell_labels_path = "./swell/label.xlsx"
     utils.makedirs(data_save_path)
     freq = 256
     window_size = window_size_sec * freq
     swell_file_names, _ = import_filenames(swell_path)
-    print("the swell_file_names is:",swell_file_names)
+    
     person_name = []
     for i in swell_file_names:
-        person_name.append(i[:i.find('_')])
-        
+        person_name.append(i[:i.find('_')])        
     person = np.unique(person_name)
     k = 0
     max_debug = -1
     swell_norm = np.empty((person.shape[0], 3))
+    
     for i in tqdm(person):
         counter =0
-        #print(i)
         for j in swell_file_names:
             if j.split('_')[0]==i:
                 signal = csv_to_list(swell_path + j)
-                #signal = filter_ecg(signal, freq)
-
                 if counter == 0:
                     data = signal
                 else:
                     data = np.vstack((data, signal))
                     counter = 1
-        
         data = np.sort(data)
         tmp_max = np.max(data)
         if(tmp_max>max_debug):
@@ -157,12 +139,9 @@ def extract_swell_dataset(overlap_pct, window_size_sec, data_save_path, save):
         mean = np.mean(data)
         print("for ", i," mean is ",mean,"std is ", std)
         swell_norm[k, :] = [np.int(i[2:]), mean, std]
-        k = k+1
-        
-        
+        k = k+1 
         
     swell_dict = {}
-    
     for i in tqdm(swell_file_names):
         name = np.int(i[2:i.find('_')])
         print("name is ",name)
@@ -175,17 +154,14 @@ def extract_swell_dataset(overlap_pct, window_size_sec, data_save_path, save):
                     for row in lines:
                         for e in row:
                             data_raw.append(float(e))
-
         #data = np.loadtxt(swell_path + i) original version
         data = normalize(data_raw, x_mean, x_std) # this creates inf, the problem happen when std==0
         tmp_max = np.max(data)
         if(tmp_max>max_debug):
             max_debug=tmp_max
         data_windowed = make_window (data, freq, overlap_pct, window_size_sec)
-
         swell_dict.update({i: data_windowed})
         
-    
     counter = 0;
     label = pd.ExcelFile(swell_labels_path)
     label_sheet_names = label.sheet_names
@@ -202,30 +178,15 @@ def extract_swell_dataset(overlap_pct, window_size_sec, data_save_path, save):
         else:
             labels = labels.append(participant_labellings, ignore_index = True, sort=False)
         counter = counter + 1;
-
     swell_labels = labels.drop_duplicates(subset = ['PP','Blok'], keep = 'last')
     swell_labels = swell_labels.reset_index(drop = True)
     counter = 0
 
-
-    
     #adding csv names into labels
     swell_labels['filename'] = 'default'
-    #print("the swell_labels is ")
-    #print(swell_labels) 
-    #print("swell file name: ", swell_file_names) pp9_4-10-2012_c1.csv
-
-
     for i in swell_file_names:
         start = i.find('_')
-        #end = i.rfind('c') # original version, we assume that the in the original version they didn't use csv file
         end = i.find('c')
-      #  print("start is: ",start," end is: ",end) start is:  3  end is:  17
-
-
-      #  print("the full is ",i," but from start to end we get ",i[start:end])
-       # print("swell_labels['PP'] == i[:start].upper():  ",swell_labels['PP'] == i[:start].upper())
-        #print("start is ",start,"end is ",end,"len is ",len(i),"the problematic string is: ",i[end+1:-4])
         print("swell_labels['PP']:")
         print(swell_labels['PP'])
         print("i[:start].upper():")
@@ -238,27 +199,18 @@ def extract_swell_dataset(overlap_pct, window_size_sec, data_save_path, save):
         print("conditon is: ")
         print(condition)
         print("the type of con is ",type(condition))
-
         index = np.where(condition)[0]
         print("index is ",index)
         print("np.where(condition): ",np.where(condition))
         print("swell_labels['filename'].iloc[index[0]]")
         print(swell_labels['filename'].iloc[index[0]])
- 
-
         if len(index) != 0:
-            swell_labels['filename'].iloc[index[0]] = i
-        
-        print("swell_labels['filename'].iloc[index[0]]",swell_labels['filename'].iloc[index[0]])
-
-       # print("after if swell_labels['filename']:")
-        #print(swell_labels['filename'])
-
-    
+            swell_labels['filename'].iloc[index[0]] = i 
+        print("swell_labels['filename'].iloc[index[0]]",swell_labels['filename'].iloc[index[0]]) 
     print('dict unpacking...')
-    
     final_set = np.zeros((1, window_size+12), dtype = int)
     key_list = swell_dict.keys()
+    
     for i in tqdm(key_list):
         new_key = np.float(i[i.find('pp')+2:i.find('_')] + "." + i[i.find('c')+1:-4])
         values = swell_dict[i]
@@ -269,27 +221,17 @@ def extract_swell_dataset(overlap_pct, window_size_sec, data_save_path, save):
         label_set = pd.concat([label_set]*len(values), ignore_index=True)
         label_set = np.asarray(label_set)
         signal_set = np.hstack((key, label_set, values))
-        final_set = np.vstack((final_set, signal_set))
-        
+        final_set = np.vstack((final_set, signal_set))    
     final_set = final_set[1:]
     max_val = np.max(final_set) #for debug
-        
     if save:
-
-        # the original line:np.save(data_save_path / 'swell_dict.npy', final_set)          
-        #path_for_save = data_save_path + '\swell_dict.npy'
         np.save(os.path.join(data_save_path,'swell_dict.npy'), final_set)          
-
+   
     print(swell_dict)
     final_set = final_set.shape
     print("final_set size is:", final_set)
     print('swell files importing finished...')
     return final_set
-
-
-
-
-
 
        
 def load_data(path):
@@ -314,35 +256,6 @@ def swell_prepare_for_10fold(swell_data):
     y_valence            = y_valence.astype(int).reshape(-1, 1)
     swell_data  = np.hstack((person, y_input_stress, y_arousal, y_valence, ecg))
     return swell_data 
-
-
-'''
-def swell_prepare_for_10fold(swell_data):
-    
-    ecg = swell_data[:, 12:]
-    
-    """ 'person.blok', 'Valence_rc', 'Arousal_rc', 'Dominance' """
-    """ 'person.blok', 'Valence_rc', 'Arousal_rc', 'Dominance', 'Stress', 'MentalEffort', 'MentalDemand', 'PhysicalDemand', 'TemporalDemand', 'Effort','Performance_rc', 'Frustration' """
-
-    person               = np.floor(swell_data[:,0])
-    y_input_stress       = (swell_data[:, 0]*10 - np.round(swell_data[:, 0])*10).astype(int)
-    y_input_stress       = swell_data[:,0]
-    y_arousal            = swell_data[:, 2]
-    y_valence            = swell_data[:, 1]
-    person               = person.reshape(-1, 1)
-    y_input_stress       = y_input_stress.reshape(-1, 1)
-    y_arousal            = y_arousal.astype(int).reshape(-1, 1)
-    y_valence            = y_valence.astype(int).reshape(-1, 1)
-    swell_data  = np.hstack((person, y_input_stress, y_arousal, y_valence, ecg))
-    return swell_data 
-'''
-
-
-
-
-
-
-
 
 def save_list(mylist, filename):
     for i in range(len(mylist)):

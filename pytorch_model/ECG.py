@@ -17,17 +17,11 @@ torch.cuda.memory_summary(device=None, abbreviated=False)
 
 
 tf.compat.v1.logging.set_verbosity(tf.compat.v1.logging.ERROR)
-
+import sys
+sys.path.append('../pre_processing_and_recover_network/')
 import data_preprocessing
-import model
-import utils
-import signal_transformation_task
-# done cause every time I change data_preprocessing.py it didn't affect
 import importlib
 importlib.reload(data_preprocessing)
-importlib.reload(model)
-importlib.reload(utils)
-importlib.reload(signal_transformation_task)
 
 
 class EmotionRec(pl.LightningModule):
@@ -353,7 +347,6 @@ def extract_model(model_path):
     model_recovered.eval()
     trainer = pl.Trainer()
     test_loader_recovered=torch.load("./lighning_saved_params/test_loader.pt")
-    #train_loader_recovered=torch.load('./lighning_saved_params/train_loader.pt')
     y_hat=trainer.predict(model_recovered,test_loader_recovered)
 
     # split y_hat (the prediction of the model) to y_hat of each classifier
