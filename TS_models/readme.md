@@ -24,7 +24,8 @@ Make sure the following empty directories exist inside this directory:
 - learners_EX3
 - learners_EX4
 - light_output
-- lightning_saved_params
+- lightning_saved_params </br>
+You can use the script by running: `./create_folders.sh`
 
 ## Models Notebooks
 
