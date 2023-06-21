@@ -8,10 +8,10 @@
     Follow after an existing model and offer a way to improve performance.
 
 ## Repository Content:
-Extract_samples: MATLAB script for converting the ECG samples from S00 to CSV files.
-pre_processing_and_recover_network:  reconstruction of the  SSL model from the paper including the pre-processing of the dataset. In Keras.
-pytorch_model: implementation of the FS model using Pytorch and analysis of the result for the research part of the project.
-TS_models: the TST and Inception Time models including the experiment of trying to generalization.
+**Extract_samples** MATLAB script for converting the ECG samples from S00 to CSV files. </br>
+**pre_processing_and_recover_network**  reconstruction of the  SSL model from the paper including the pre-processing of the dataset. In Keras. </br>
+**pytorch_model** implementation of the FS model using Pytorch and analysis of the result for the research part of the project. </br>
+**TS_models** the TST and Inception Time models including the experiment of trying to generalization. </br>
 
 The instructions for running the project can be found in the main directory of the project, in the file named "Instructions_for_Running.md."
 ## Results
