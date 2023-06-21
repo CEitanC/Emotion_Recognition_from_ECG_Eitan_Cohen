@@ -1,7 +1,8 @@
 # Create the Dataset - Need to Do One Time
 
 ## 1. CSV Files
-Make sure you have the CSV files after following the steps in the Extract_samples directory. Locate them in this directory inside an internal directory named csv_files.
+Make sure you have the CSV files in this directory inside an internal directory named csv_files.
+If you don't follow the steps in the readme of the Extract_samples directory.
 
 ## 2. Open Jupyter Notebook
 Open the `pre_processing_and_SSL_model.ipynb` Jupyter Notebook.
