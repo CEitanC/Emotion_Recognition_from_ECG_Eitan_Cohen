@@ -66,8 +66,9 @@ def import_filenames(directory_path):
         dir_list        = dirs
     # clean the ~lock
     for i in filename_list:
-        if(("~" in i)or("read" in i):
+        if(("~" in i)or("read" in i)):
             filename_list.remove(i)
+        
 
 
 
@@ -139,6 +140,7 @@ def extract_swell_dataset(overlap_pct, window_size_sec, data_save_path, save):
         mean = np.mean(data)
         print("for ", i," mean is ",mean,"std is ", std)
         swell_norm[k, :] = [np.int(i[2:]), mean, std]
+        print("K is ",k)
         k = k+1 
         
     swell_dict = {}
@@ -203,10 +205,10 @@ def extract_swell_dataset(overlap_pct, window_size_sec, data_save_path, save):
         print("index is ",index)
         print("np.where(condition): ",np.where(condition))
         print("swell_labels['filename'].iloc[index[0]]")
-        print(swell_labels['filename'].iloc[index[0]])
+        #print(swell_labels['filename'].iloc[index[0]])
         if len(index) != 0:
             swell_labels['filename'].iloc[index[0]] = i 
-        print("swell_labels['filename'].iloc[index[0]]",swell_labels['filename'].iloc[index[0]]) 
+      #  print("swell_labels['filename'].iloc[index[0]]",swell_labels['filename'].iloc[index[0]]) 
     print('dict unpacking...')
     final_set = np.zeros((1, window_size+12), dtype = int)
     key_list = swell_dict.keys()
@@ -220,6 +222,8 @@ def extract_swell_dataset(overlap_pct, window_size_sec, data_save_path, save):
         label_set = label_set[['Valence_rc', 'Arousal_rc', 'Dominance', 'Stress', 'MentalEffort', 'MentalDemand', 'PhysicalDemand', 'TemporalDemand', 'Effort','Performance_rc', 'Frustration']]
         label_set = pd.concat([label_set]*len(values), ignore_index=True)
         label_set = np.asarray(label_set)
+        print("---key ",key.shape, "\n label ",label_set.shape,"\n vals ",values.shape)
+        label_set=np.resize(label_set, ( key.shape[0],label_set.shape[1]))
         signal_set = np.hstack((key, label_set, values))
         final_set = np.vstack((final_set, signal_set))    
     final_set = final_set[1:]
