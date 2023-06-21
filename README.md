@@ -4,8 +4,8 @@
 ### Supervised by Amro Abu-Saleh
 
 ## Project Goals:
-    Research the option of emotion recognition from ECG
-    Follow after an existing model and offer a way to improve performance.
+    - Research the option of emotion recognition from ECG
+    - Follow after an existing model and offer a way to improve performance.
 
 ## Repository Content:
 **Extract_samples** MATLAB script for converting the ECG samples from S00 to CSV files. </br>
