@@ -1,4 +1,4 @@
-# Project Directory Overview
+# Directory Overview
 
 This directory includes two parts of the project:
 
