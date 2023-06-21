@@ -66,7 +66,7 @@ def import_filenames(directory_path):
         dir_list        = dirs
     # clean the ~lock
     for i in filename_list:
-        if(("~" in i)):
+        if(("~" in i)or("read" in i):
             filename_list.remove(i)
 
 
@@ -107,7 +107,7 @@ def make_window(signal, fs, overlap, window_size_sec):
         
 def extract_swell_dataset(overlap_pct, window_size_sec, data_save_path, save):
     swell_path = "./csv_files/"
-    swell_labels_path = "./swell/label.xlsx"
+    swell_labels_path = "./label.xlsx"
     utils.makedirs(data_save_path)
     freq = 256
     window_size = window_size_sec * freq
