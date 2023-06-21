@@ -5,7 +5,7 @@
 
 ## Project Goals:
     Research the option of emotion recognition from ECG
-    Follow after an existing model and offer a way toimprove performancess.
+    Follow after an existing model and offer a way to improve performance.
 
 ## Repository Content:
 Extract_samples: MATLAB script for converting the ECG samples from S00 to CSV files.
@@ -15,7 +15,9 @@ TS_models: the TST and Inception Time models including the experiment of trying 
 
 The instructions for running the project can be found in the main directory of the project, in the file named "Instructions_for_Running.md."
 ## Results
-![Sample Image]('Results_table.png')
+The accuracy of the models in the project, including the results from the paper, is summarized in the table below. It is evident from the table that InceptionTime achieved better accuracy compared to the model described in the paper:
+
+![Sample Image](Results_table.png)
 
 ## Credits
 The project is based on the paper - https://arxiv.org/abs/2002.03898 </br>
