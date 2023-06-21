@@ -24,7 +24,8 @@ Create the following empty folders inside this directory:
 - data_folder
 - summaries
 - output
-- models
+- models </br>
+You can use the script by running: `./create_folders.sh`
 
 ## 3. Run SSL Model
 Run the section titled "Run SSL Model" in the notebook.
