@@ -1,7 +1,9 @@
 # Steps for Creating CSV Files for SWELL Datasets
 
 ## 1. Downloading S00 Files
-Download all S00 files from the raw data directory [here](https://easy.dans.knaw.nl/ui/datasets/id/easy-dataset:58624), except for the following files:
+ The raw data directory is [here](https://ssh.datastations.nl/dataset.xhtml?persistentId=doi:10.17026/dans-x55-69zp), </br>
+ Navigate to 0-Raw data -> D - Physiology -raw data -> Mobi signals_raw and filtered </br>
+ Download all the S00 files except for the following files:
 - pp10_8-10-2012-c2.S00
 - pp15_15-10-2012_c2.S00
 - pp20_29-10-2012_c1.S00
