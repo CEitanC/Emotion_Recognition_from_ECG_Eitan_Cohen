@@ -6,7 +6,7 @@ To run and restore the project, please follow the steps below:
  Alternatively, you can run the command in the  terminal: `git clone https://github.com/CEitanC/Emotion_Recognition_from_ECG_Eitan_C`
 2. To recover the project as it was done, follow the instructions in each directory's README file, pay attention to any additional dependencies, and use the provided create_folders.sh script for ensuring a valid working area. To ensure the create_folders.sh script is executable, use the `chmod +x create_folders.sh` command before executing it.
 3. Use the CSV files located in the `pre_processing_and_recover_network` directory inside the `csv_files` directory. Alternatively, you can create them yourself by following these steps:
-   - Download the raw data from the following link: [Raw Data](https://easy.dans.knaw.nl/ui/datasets/id/easy-dataset:58624).
+   - Download the raw data from the following link: [Raw Data](https://ssh.datastations.nl/dataset.xhtml?persistentId=doi:10.17026/dans-x55-69zp).
    - Convert the files in S00 format to CSV format, which will be used for further processing. To do this, navigate to the `Extract_samples` folder and run the script `main.m` from the S00 files folder of the project. Refer to the instructions in the readme file located in the `Extract_samples` folder for more details.
 
 4. Preprocess the data and recover the SSL (Self-Supervised Learning) network. Go to the `pre_processing_and_recover_network` folder and run the notebook `pre_processing_and_SSL_model.ipynb`. Follow the instructions provided in the readme file of the `pre_processing_and_recover_network` folder.
