@@ -8,8 +8,8 @@ This directory includes two parts of the project:
 ## Fully Supervised Model
 
 ### 1. Required Directories
-Make sure this directory includes the following directories: `light_output` and `lightning_saved_params`.
-
+Make sure this directory includes the following directories: `light_output` and `lightning_saved_params`. </br>
+You can use the script by running: `./create_folders.sh`
 ### 2. Swell Dataset
 The `swell_dict.npy` file should be located inside the `../pre_processing_and_recover_network/swell_dataset` folder.
 
